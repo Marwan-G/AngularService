@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Account} from '../model.component';
 @Component({
   selector: 'app-new-account',
@@ -7,4 +7,9 @@ import {Account} from '../model.component';
 })
 export class AppNewaccountComponent {
 @Input() item: Account;
+@Input() id: number;
+@Output() status = new EventEmitter<{id:number, newStatus:string}>();
+  setTo(state: string) {
+    this.status.emit({id:this.id, newStatus: state});
+  }
 }

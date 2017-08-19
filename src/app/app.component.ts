@@ -13,8 +13,13 @@ export class AppComponent {
         new Account(  'ghabin account',  'inactive'),
       ];
 
-        onAccountAdded(newac:Account ) {
+        onAccountAdded(newac: Account ) {
         this.accounts.push(newac);
+       }
+       onStatuschange( updateinfo: {id: number, newStatus: string}) {
+
+       this.accounts[updateinfo.id].status = updateinfo.newStatus;
+
        }
       constructor() {
 

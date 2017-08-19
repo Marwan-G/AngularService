@@ -8,6 +8,13 @@
         <div class="panel-body">
           {{item.status}}
         </div>
+        <hr>
+        <div>
+         <p>account status is {{item.status}}</p>
+          <button class="btn btn-default" (click)="setTo('active')">active</button>
+          <button class="btn btn-default" (click)="setTo('inactive')">inactive</button>
+          <button class="btn btn-default" (click)="setTo('unKnown')">unknown</button>
+        </div>
       </div>
     </div>
   </div>

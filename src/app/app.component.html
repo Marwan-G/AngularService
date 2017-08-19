@@ -4,8 +4,10 @@
           <app-account (newaccount)= "onAccountAdded($event)"></app-account>
 
           <app-new-account
-                           *ngFor="let item of accounts"
-            [item]="item">
+            *ngFor="let item of accounts; let  i = index"
+            [item]= "item"
+            [id]="i"
+            (status)="onStatuschange($event)">
           </app-new-account>
       </div>
     </div>
