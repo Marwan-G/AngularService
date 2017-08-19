@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Account} from './model.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-}
+      accounts: Account[] = [
+        new Account(  'Marwan account',  'active'),
+        new Account(  'ghabin account',  'inactive'),
+        new Account(  'ghabin account',  'inactive'),
+      ];
+
+        onAccountAdded(newac:Account ) {
+        this.accounts.push(newac);
+       }
+      constructor() {
+
+      }
+
+ }
+
